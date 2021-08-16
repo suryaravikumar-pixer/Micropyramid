@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div>
+        {% if object_list %}
+            {% for item in index_stu_list %}
+                <h1>{{ item.name }}</h1> 
+                <h1>{{ item.email }}</h1> 
+                <h1>{{ item.college }}</h1> 
+                <h1>{{ item.city }}</h1> 
+                <p>-----------------------</p>
+            {% endfor item in index_stu_list %}
+            {% else %}
+            <h1>Student details not found</h1>
+        {% endif %}
+    </div> 
+</body>
+</html>
