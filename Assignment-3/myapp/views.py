@@ -4,6 +4,8 @@ from django.views.generic.edit import DeleteView, UpdateView
 # from django.views.generic.detail import DetailView
 from .models import Student
 from .forms import StudentForm
+
+
 class IndexView(ListView):
     model=Student
     template_name='myapp/list_view.html'
@@ -17,11 +19,13 @@ class IndexView(ListView):
 
 class CreateStudent(CreateView):
     model=Student
-    form_class=StudentForm
+    # form_class=StudentForm
+    fields=['name','email','college', 'city']
     template_name='myapp/create_view.html'
     success_url='/'
 
 class UpdateStudent(UpdateView):
+
     model=Student
     fields='__all__'
     template_name='myapp/update_view.html'
